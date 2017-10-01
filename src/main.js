@@ -203,10 +203,28 @@ class LINE extends LineAPI {
             }
         }
 
-        if(txt == 'halo' || txt == 'sya') {
-            this._sendMessage(seq, 'kenalkan saya jabrik :)');
+        if(txt == 'hallo' || txt == 'salken') {
+            this._sendMessage(seq, 'salken ka2 :)');
         }
 
+        if(txt == 'pagi' || txt == 'siang') {
+            this._sendMessage(seq, 'awalilah harimu dengan bismillah :)');
+        }
+
+        if(txt == 'assalamuallaikum' || txt == 'asalamuallaikum') {
+            this._sendMessage(seq, 'waalaikumsallam:)');
+        }
+
+
+        if(txt == 'mbuh' || txt == 'asem') {
+            this._sendMessage(seq, 'sak karep mu.... :)');
+        }
+
+        if(txt == 'bot' || txt == 'bott') {
+            this._sendMessage(seq, 'jomblo ya,mainan bot :)');
+        }
+	    
+	  
         if(txt == 'speed') {
             const curTime = (Date.now() / 1000);
             await this._sendMessage(seq,'processing....');
@@ -239,7 +257,7 @@ class LINE extends LineAPI {
             this._sendMessage(seq, `Remove all check reader on memory`);
         }  
 
-        if(txt == 'recheck'){
+        if(txt == 'cctv'){
             let rec = await this.recheck(this.checkReader,seq.to);
             const mentions = await this.mention(rec);
             seq.contentMetadata = mentions.cmddata;
