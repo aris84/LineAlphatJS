@@ -257,7 +257,7 @@ class LINE extends LineAPI {
             this._sendMessage(seq, `Remove all check reader on memory`);
         }  
 
-        if(txt == 'cctv'){
+        if(txt == 'cctv' || txt == '#read'){
             let rec = await this.recheck(this.checkReader,seq.to);
             const mentions = await this.mention(rec);
             seq.contentMetadata = mentions.cmddata;
