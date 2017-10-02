@@ -281,10 +281,10 @@ class LINE extends LineAPI {
         if(action.includes(txt)) {
             this.setState(seq)
         }
-	
-        if(txt == 'absen' && isAdminOrBot (seq.from)) {
+	if(txt == 'absen' && isAdminOrBot (seq.from)) {
             let rec = await this._getGroup(seq.to);
-            const mentions = await this.mention(rec.members); seq.contentMetadata = mentions.cmddata;
+            const mentions = await this.mention(rec.members);
+   	    seq.contentMetadata = mentions.cmddata;
             await this._sendMessage(seq,mentions.names.join(''));
         }
 	
