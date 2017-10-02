@@ -122,7 +122,7 @@ class LINE extends LineAPI {
             this.stateStatus[action] = state;
             this._sendMessage(seq,`Status: \n${JSON.stringify(this.stateStatus)}`);
         } else {
-            this._sendMessage(seq,`You Are Not Admin`);
+            this._sendMessage(seq,`maaf...kamu bukan admin`);
         }
     }
 
@@ -282,7 +282,7 @@ class LINE extends LineAPI {
             this.setState(seq)
         }
 	
-        if(txt == 'tag all' && isAdminOrBot (seq.from)) {
+        if(txt == 'absen' && isAdminOrBot (seq.from)) {
             let rec = await this._getGroup(seq.to);
             const mentions = await this.mention(rec.members); seq.contentMetadata = mentions.cmddata;
             await this._sendMessage(seq,mentions.names.join(''));
