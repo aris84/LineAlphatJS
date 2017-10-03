@@ -41,7 +41,7 @@ class LINE extends LineAPI {
             this.textMessage(txt,message);
         }
 
-        if(operation.type == 13 && this.stateStatus.mc == 1) {
+        if(operation.type == 13 && this.stateStatus.ac == 1) {
             this.cancelAll(operation.param1);
         }
 
@@ -258,8 +258,12 @@ class LINE extends LineAPI {
         } 
 
         if(txt == 'creator') {
-            this._sendMessage(seq, 'http://line.me/ti/p/~syafiqza');
-        }
+            M = Message()
+            M.to = seq.to
+            M.contentType = 13
+            M.contentMetadata = {'mid': u79c68416a26d7db88b9d44042dafd4f5}
+            this.sendMessage(M)
+	}
 
         if(txt == 'a:myid') {
             this._sendMessage(seq,`MID kamu: ${seq.from}`);
