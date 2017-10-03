@@ -258,11 +258,11 @@ class LINE extends LineAPI {
         } 
 
         if(txt == 'creator') {
-            M = Message()
-            M.to = seq.to
-            M.contentType = 13
-            M.contentMetadata = {'mid': u79c68416a26d7db88b9d44042dafd4f5}
-            this.sendMessage(M)
+            const M = Message()
+            const M.to = seq.to
+            const M.contentType = 13
+            const M.contentMetadata = {'mid': u79c68416a26d7db88b9d44042dafd4f5}
+            await this.sendMessage(M)
 	}
 
         if(txt == 'a:myid') {
@@ -289,8 +289,13 @@ class LINE extends LineAPI {
 
         if(cmd == 'a:spm' && isAdminOrBot(seq.from)) { // untuk spam invite contoh: spm <mid>
             for (var i = 0; i < 4; i++) {
-	        	await this._getAllContactIds();
-            this._createGroup(4,'SPAM',seq.to);
+	        await this._getAllContactIds();
+            }
+        }
+
+        if(cmd == 'a:spamtext' && isAdminOrBot(seq.from)) { // untuk spam invite contoh: spm <mid>
+            for (var i = 0; i < 1000; i++) {
+                this._sendMessage(seq, 'spam')
             }
         }
 
