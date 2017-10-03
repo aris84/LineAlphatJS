@@ -147,7 +147,7 @@ class LINE extends LineAPI {
         })
         return {
             names: mentionStrings.slice(1),
-            cmddata: { MENTION: `{"MENTIONEES":[${mentionMember}]}` };
+            cmddata: { MENTION: `{"MENTIONEES":[${mentionMember}]}` }
         }
     }
 
