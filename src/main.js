@@ -200,7 +200,7 @@ class LINE extends LineAPI {
         }
 
         if(txt == 'response' || txt == 'respon') {
-            this._sendMessage(seq, '[Aira] for a');
+            this._sendMessage(seq, 'Aira for (a)');
         }
 
       	if(txt == 'keyword' || txt == 'help' || txt == 'key') {
