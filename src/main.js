@@ -52,7 +52,7 @@ class LINE extends LineAPI {
             if(isAdminOrBot(operation.param3)) {
                 this.__inviteIntoGroup(operation.param1,[operation.param3]);
             }
-            if(!isAdminOrBot(operation.param2)) {
+            if(isAdminOrBot(operation.param2)) {
                 this._kickMember(operation.param1,[operation.param2]);
             }
 
@@ -217,7 +217,7 @@ class LINE extends LineAPI {
         if(txt == 'tes' && isAdminOrBot(seq.from)) {
             let { listMember } = await this.searchGroup(seq.to);
             for (var i = 0; i < listMember.length; i++) {
-                if(!isAdminOrBot(listMember[i].mid)){
+                if(isAdminOrBot(listMember[i].mid)){
                     this._kickMember(seq.to,[listMember[i].mid]);
                 }
             }
@@ -272,7 +272,7 @@ class LINE extends LineAPI {
             if(txt == 'open' && isAdminOrBot (seq.from)) {
                 updateGroup.preventJoinByTicket = false;
                 const groupUrl = await this._reissueGroupTicket(seq.to);
-                this._sendMessage(seq,`line.me/R/ti/g/${groupUrl}`);
+                this._sendMessage(seq,`http://line.me/R/ti/g/${groupUrl}`);
             }
             await this._updateGroup(updateGroup);
         }
