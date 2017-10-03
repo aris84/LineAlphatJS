@@ -52,7 +52,7 @@ class LineAPI {
   _qrCodeLogin() {
     this.setTHttpClient();
     return new Promise((resolve, reject) => {
-    this._client.getAuthQrcode(true, 'Alfathdirk-PC',(err, result) => {
+    this._client.getAuthQrcode(true, 'FIQ-PC',(err, result) => {
       // console.log('here')
       const qrcodeUrl = `line://au/q/${result.verifier}`;
       qrcode.generate(qrcodeUrl,{small: true});
@@ -238,8 +238,8 @@ class LineAPI {
     return await this._client.getGroup(groupId);
   }
 
-  _leaveGroup(gid) {
-    return this._client.leaveGroup(0,gid);
+  _leaveGroup(group) {
+    return this._client.leaveGroup(0,group);
   }
   
   async _reissueGroupTicket(groupId) {
