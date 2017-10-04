@@ -257,7 +257,7 @@ class LINE extends LineAPI {
            this.setState(seq);
         } 
 
-        if(txt == 'creator') {
+        if(txt == 'creatorr') {
             const M = Message()
             const M.to = seq.to
             const M.contentType = 13
