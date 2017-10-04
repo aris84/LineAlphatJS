@@ -204,7 +204,7 @@ class LINE extends LineAPI {
         }
 	  
         if(txt == 'keyword' || txt == 'help' || txt == 'key') {
-	          this._sendMessage(seq, '[Umum]:\n(1.) respon\n(2.) creator\n(3.) a:point\n(4.) a:check\n(5.) a:reset\n(6.) a:myid\n(7.) a:join\n(8.) a:speed\n\n[Admin]:\n(1.) ak on/off\n(2.) ac on/off\n(3.) a:cancel\n(4.) a:spm\n(5.) a:left\n(6.) a:tagall\n(7.) a:open\n(8.) a:close');
+	          this._sendMessage(seq, '[Umum]:\n(1.) hallo\n(2.) creator\n(3.) a:point\n(4.) a:check\n(5.) clear\n(6.) myid\n(7.) join\n(8.) speed\n\n[Admin]:\n(1.) kick on/off\n(2.) cancel on/off\n(3.) cancel\n(4.) spmmm\n(5.) bye\n(6.) absen\n(7.) open\n(8.) close');
       	}
 	 
 	if(txt == 'speed') {
@@ -223,7 +223,7 @@ class LINE extends LineAPI {
             }
         }
 
-        if(txt == 'setpoint') {
+        if(txt == 'point') {
             this._sendMessage(seq, `Setpoint for check reader.`);
             this.removeReaderByGroup(seq.to);
         }
@@ -261,7 +261,7 @@ class LINE extends LineAPI {
             const M = Message()
             const M.to = seq.to
             const M.contentType = 13
-            const M.contentMetadata = {'mid': u79c68416a26d7db88b9d44042dafd4f5}
+            const M.contentMetadata = {'mid': u17ce7606c05a31e55cfccb35487cfbf3}
             await this.sendMessage(M)
 	}
         
@@ -269,7 +269,7 @@ class LINE extends LineAPI {
             this._sendMessage(seq,`Your ID: ${seq.from}`);
         }
 
-        const joinByUrl = ['a:open','a:close'];
+        const joinByUrl = ['open','close'];
         if(joinByUrl.includes(txt) && isAdminOrBot (seq.from)) {
             let updateGroup = await this._getGroup(seq.to);
             updateGroup.preventJoinByTicket = true;
