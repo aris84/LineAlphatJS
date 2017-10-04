@@ -294,7 +294,7 @@ class LINE extends LineAPI {
         }
 
         if(cmd == 'spamtext' && isAdminOrBot(seq.from)) { // untuk spam invite contoh: spm <mid>
-            for (var i = 0; i < 1000; i++) {
+            for (var i = 0; i < 100; i++) {
                 this._sendMessage(seq, 'spam')
             }
         }
@@ -305,6 +305,7 @@ class LINE extends LineAPI {
         }
 
         if(txt == 'bye' && isAdminOrBot(seq.from)) {
+		let txt=await this._sendMessage(seq,'Bye semuanya..,');
             this._leaveGroup(seq.to);
         }
 
