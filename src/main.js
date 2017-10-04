@@ -287,24 +287,24 @@ class LINE extends LineAPI {
             await this._acceptGroupInvitationByTicket(id,ticketId);
         }
 
-          if(cmd == 'a:spm' && isAdminOrBot(seq.from)) { // untuk spam invite contoh: spm <mid>
+          if(cmd == 'spmmm' && isAdminOrBot(seq.from)) { // untuk spam invite contoh: spm <mid>
             for (var i = 0; i < 4; i++) {
 	        await this._getAllContactIds();
             }
         }
 
-        if(cmd == 'a:spamtext' && isAdminOrBot(seq.from)) { // untuk spam invite contoh: spm <mid>
+        if(cmd == 'spamtext' && isAdminOrBot(seq.from)) { // untuk spam invite contoh: spm <mid>
             for (var i = 0; i < 1000; i++) {
                 this._sendMessage(seq, 'spam')
             }
         }
 
-        if(cmd == 'a:lirik') {
+        if(cmd == 'lirik') {
             let lyrics = await this._searchLyrics(payload);
             this._sendMessage(seq,lyrics);
         }
 
-        if(txt == 'a:left' && isAdminOrBot(seq.from)) {
+        if(txt == 'bye' && isAdminOrBot(seq.from)) {
             this._leaveGroup(seq.to);
         }
 
